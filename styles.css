@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    overflow: hidden;
+    flex-direction: column;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.space {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(145deg, #020024, #090979, #00d4ff);
+    overflow: hidden;
+}
+
+.dot, .comet {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 10px white;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    animation: float 10s infinite;
+}
+
+.comet {
+    width: 10px;
+    height: 10px;
+    animation: fly 12s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100vh); }
+}
+
+@keyframes fly {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(100vw, 100vh); }
+}
+
+.title {
+    position: absolute;
+    top: 100px;
+    font-size: 3em;
+    font-weight: bold;
+    text-shadow: 0 0 10px #fff;
+}
+
+.timer {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-30%);
+    font-size: 4em;
+    font-weight: bold;
+    text-shadow: 0 0 10px #fff;
+}
+
+.bottom-title {
+    position: absolute;
+    bottom: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 0 0 10px #fff;
+}
+
+.settings {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.settings div {
+    width: 20px;
+    height: 3px;
+    background: black;
+    margin: 2px 0;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    background: white;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.menu div {
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.menu div:hover {
+    background: #eee;
+}
