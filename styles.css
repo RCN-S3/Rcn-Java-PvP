@@ -2,13 +2,12 @@ body {
     margin: 0;
     height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     background: black;
-    overflow: hidden;
-    flex-direction: column;
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .space {
@@ -16,104 +15,50 @@ body {
     width: 100%;
     height: 100%;
     background: linear-gradient(145deg, #020024, #090979, #00d4ff);
-    overflow: hidden;
-}
-
-.dot, .comet {
-    position: absolute;
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0 0 10px white;
-}
-
-.dot {
-    width: 5px;
-    height: 5px;
-    animation: float 10s infinite;
-}
-
-.comet {
-    width: 10px;
-    height: 10px;
-    animation: fly 12s infinite linear;
-}
-
-@keyframes float {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-100vh); }
-}
-
-@keyframes fly {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(100vw, 100vh); }
+    z-index: -1;
 }
 
 .title {
-    position: absolute;
-    top: 100px;
+    margin-top: 20px;
     font-size: 3em;
     font-weight: bold;
     text-shadow: 0 0 10px #fff;
+    text-align: center; /* Center the title */
 }
 
 .timer {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-30%);
-    font-size: 4em;
-    font-weight: bold;
-    text-shadow: 0 0 10px #fff;
-}
-
-.bottom-title {
-    position: absolute;
-    bottom: 20px;
     font-size: 2em;
     font-weight: bold;
     text-shadow: 0 0 10px #fff;
+    margin-bottom: 20px; /* Space between title and timer */
 }
 
-.settings {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 30px;
-    height: 30px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+.section {
+    padding: 15px; /* Further reduced padding */
+    margin: 10px; /* Further reduced margin */
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    width: 60%; /* Reduced width */
+    max-width: 500px; /* Adjusted maximum width */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for separation */
 }
 
-.settings div {
-    width: 20px;
-    height: 3px;
-    background: black;
-    margin: 2px 0;
+h2 {
+    margin-bottom: 10px; /* Reduced margin */
 }
 
-.menu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    background: white;
-    color: black;
-    border: 1px solid #ccc;
+.buy-button {
+    margin: 5px; /* Adjusted margin */
+    padding: 6px 10px; /* Further reduced padding */
+    font-size: 0.8em; /* Slightly smaller font size */
+    background: #00d4ff;
+    border: none;
     border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.menu div {
-    padding: 10px;
     cursor: pointer;
     transition: background 0.3s;
 }
 
-.menu div:hover {
-    background: #eee;
+.buy-button:hover {
+    background: #0099cc;
 }

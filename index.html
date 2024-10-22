@@ -3,25 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Background with Countdown</title>
+    <title>RCN Java PvP</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="space" id="background"></div>
-    <div class="title">COMING SOON!</div>
+    <div class="title">RCN Java PvP</div>
     <div class="timer" id="timer"></div>
-    <div class="bottom-title">RCN PvP S3?</div>
-    <div class="settings" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+
+    <div id="ranks" class="section">
+        <h2>Ranks</h2>
+        <p>Buy various ranks to enhance your gameplay!</p>
+        <button class="buy-button">Gold</button>
+        <button class="buy-button">Diamond</button>
+        <button class="buy-button">Legendary</button>
     </div>
-    <div class="menu" id="menu">
-        <div onclick="setTheme('blue')">Blue</div>
-        <div onclick="setTheme('red')">Red</div>
-        <div onclick="setTheme('green')">Green</div>
-        <div onclick="setTheme('space')">Space Background</div>
+
+    <div id="gems" class="section">
+        <h2>Gems</h2>
+        <p>Purchase gems to use in-game!</p>
+        <button class="buy-button">Buy 100 Gems</button>
+        <button class="buy-button">Buy 500 Gems</button>
+        <button class="buy-button">Buy 1000 Gems</button>
     </div>
+
+    <div id="keys" class="section">
+        <h2>Keys</h2>
+        <p>Unlock special chests with these keys!</p>
+        <button class="buy-button">Buy 5 Keys</button>
+        <button class="buy-button">Buy 10 Keys</button>
+        <button class="buy-button">Buy 20 Keys</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
