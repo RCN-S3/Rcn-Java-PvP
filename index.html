@@ -3,90 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RCN Java PvP Store</title>
+    <title>RCN Minecraft Store</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo">RCN Java PvP</div>
-            <button id="loginBtn" class="btn">Login</button>
+            <div class="logo">🌟 RCN Minecraft Store 🌟 [ Site in development ]</div>
+            <div id="viewCounter">👁️ <span id="views">0</span></div>
         </header>
 
         <div class="banner">
-            <h1>Welcome to RCN Java PvP Store</h1>
-            <p>Get your in-game items and upgrades!</p>
+            <h1>Welcome to RCN Minecraft Store</h1>
+            <h2 class="release-title">Countdown to Release:</h2>
+            <div class="countdown" id="countdownTimer"></div>
+            <h3>Until Release Date:</h3>
+            <div class="countdown" id="countdownToRelease"></div>
         </div>
 
-        <div class="product-section">
-            <div class="product" id="ranks">
-                <h2>Ranks</h2>
-                <p>Enhance your gameplay!</p>
-                <button class="dropdown-btn">Select Rank</button>
-                <div class="dropdown-content">
-                    <button class="buy-button">Gold</button>
-                    <button class="buy-button">Diamond</button>
-                    <button class="buy-button">Legendary</button>
-                </div>
+        <div class="sections-container">
+            <div class="section" id="ranks">
+                <h2>Ranks 🔰 [ NOT DONE ]</h2>
+                <p>Ranks to get tons of rewards :D</p>
+                <label for="rankDropdown">Choose a Rank:</label>
+                <select id="rankDropdown">
+                    <option value="">Select a rank</option>
+                    <option value="Gold Rank 🟡" class="gold">Gold Rank 🟡</option>
+                    <option value="Diamond Rank 🔵" class="diamond">Diamond Rank 🔵</option>
+                    <option value="Emerald Rank 💚" class="emerald">Emerald Rank 💚</option>
+                    <option value="Immortal Rank 🌟" class="immortal">Immortal Rank 🌟</option>
+                    <option value="Mystical Rank 🌌" class="mystical">Mystical Rank 🌌</option>
+                    <option value="Mythic Rank 🏆" class="mythic">Mythic Rank 🏆</option>
+                </select>
+                <div class="preview-box" id="rankPreview">You have selected: <span id="rankSelected"></span></div>
             </div>
 
-            <div class="product" id="gems">
-                <h2>Gems</h2>
-                <p>Purchase gems to use in-game!</p>
-                <button class="dropdown-btn">Select Gems</button>
-                <div class="dropdown-content">
-                    <button class="buy-button">Buy 100 Gems</button>
-                    <button class="buy-button">Buy 500 Gems</button>
-                    <button class="buy-button">Buy 1000 Gems</button>
-                </div>
+            <div class="section" id="keys">
+                <h2>Keys 🔑 [ NOT DONE ]</h2>
+                <p>Unlock special crates!</p>
+                <label for="keyDropdown">Choose Number of Keys:</label>
+                <select id="keyDropdown">
+                    <option value="">Select keys</option>
+                    <option value="Buy 5 Keys">Buy 5 Keys</option>
+                    <option value="Buy 10 Keys">Buy 10 Keys</option>
+                    <option value="Buy 20 Keys">Buy 20 Keys</option>
+                </select>
+                <div class="preview-box" id="keyPreview">You have selected: <span id="keySelected"></span></div>
             </div>
 
-            <div class="product" id="keys">
-                <h2>Keys</h2>
-                <p>Unlock special chests!</p>
-                <button class="dropdown-btn">Select Keys</button>
-                <div class="dropdown-content">
-                    <button class="buy-button">Buy 5 Keys</button>
-                    <button class="buy-button">Buy 10 Keys</button>
-                    <button class="buy-button">Buy 20 Keys</button>
-                </div>
+            <div class="section" id="gems">
+                <h2>Gems 💎 [ NOT DONE ]</h2>
+                <p>Get gems to get rewards in game!</p>
+                <label for="gemDropdown">Choose Number of Gems:</label>
+                <select id="gemDropdown">
+                    <option value="">Select gems</option>
+                    <option value="Buy 100 Gems">Buy 100 Gems</option>
+                    <option value="Buy 500 Gems">Buy 500 Gems</option>
+                    <option value="Buy 1000 Gems">Buy 1000 Gems</option>
+                </select>
+                <div class="preview-box" id="gemPreview">You have selected: <span id="gemSelected"></span></div>
             </div>
         </div>
 
         <div class="cart">
-            <h2>Shopping Cart</h2>
+            <h2>Your Shopping Cart 🛒</h2>
             <ul id="cartItems"></ul>
-            <button id="checkoutBtn" class="btn">Checkout</button>
         </div>
 
-        <!-- Login Modal -->
-        <div id="loginModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 id="modalTitle">Login</h2>
-                <form id="authForm">
-                    <input type="text" id="username" placeholder="Minecraft Username" required>
-                    <input type="password" id="password" placeholder="Password" required>
-                    <button type="submit" class="btn">Login</button>
-                </form>
-                <p id="toggleAuth">Don't have an account? <span id="toggleLink">Register</span></p>
-                <div id="loginMessage"></div>
-            </div>
-        </div>
-
-        <!-- Contact Form -->
-        <div class="contact-form">
-            <h2>Contact Us</h2>
-            <form id="contactForm" action="contact.php" method="post">
-                <input type="text" id="contactName" name="name" placeholder="Your Name" required>
-                <input type="email" id="contactEmail" name="email" placeholder="Your Email" required>
-                <textarea id="contactMessage" name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <div id="contactMessage" class="success-message"></div>
+        <div class="blog">
+            <h2>Update Blog 📝</h2>
+            <ul id="updateList">
+                <li>-=UPDATE V1.0=-</li>
+                <li>🔧 + Refactored HTML structure for better readability! ✨</li>
+                <li>🖥️ + Cleaned up JavaScript for clarity and efficiency! 🔍</li>
+                <li>🎨 + Enhanced CSS styles for improved aesthetics! 🌈</li>
+                <li>📅 + Added countdown functionality for release date! ⏳</li>
+                <li>📈 + Improved view counter with real-time updates! 👁️</li>
+                <li>-=UPDATE V1.1=-</li>
+                <li>💡 + Enhanced performance and loading speed! 🚀</li>
+                <li>🐞 + Fixed bugs and optimized user experience! 🛠️</li>
+            </ul>
         </div>
     </div>
-
     <script src="script.js"></script>
+    <script>
+        // JavaScript to handle dropdown selection and preview
+        document.addEventListener('DOMContentLoaded', function() {
+            const rankDropdown = document.getElementById('rankDropdown');
+            const keyDropdown = document.getElementById('keyDropdown');
+            const gemDropdown = document.getElementById('gemDropdown');
+
+            const rankPreview = document.getElementById('rankPreview');
+            const keyPreview = document.getElementById('keyPreview');
+            const gemPreview = document.getElementById('gemPreview');
+
+            const rankSelected = document.getElementById('rankSelected');
+            const keySelected = document.getElementById('keySelected');
+            const gemSelected = document.getElementById('gemSelected');
+
+            rankDropdown.addEventListener('change', function() {
+                rankSelected.textContent = rankDropdown.value;
+                rankPreview.classList.add('active');
+            });
+
+            keyDropdown.addEventListener('change', function() {
+                keySelected.textContent = keyDropdown.value;
+                keyPreview.classList.add('active');
+            });
+
+            gemDropdown.addEventListener('change', function() {
+                gemSelected.textContent = gemDropdown.value;
+                gemPreview.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
